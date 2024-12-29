@@ -2,6 +2,10 @@
 name = "marion"
 version = "0.1.0"
 edition = "2021"
+authors = ["Taha Hachana <tahahachana@gmail.com>"]
+description = "High level browser automation API built on the webdriverbidi crate."
+license = "MIT"
+repository = "https://github.com/TahaHachana/marion"
 
 [dependencies]
 thiserror = "2.0.9"
