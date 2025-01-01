@@ -9,5 +9,5 @@ repository = "https://github.com/TahaHachana/marion"
 
 [dependencies]
 thiserror = "2.0.9"
-webdriverbidi = "0.1.5"
+webdriverbidi = "0.1.7"
 tokio = "1.42.0"

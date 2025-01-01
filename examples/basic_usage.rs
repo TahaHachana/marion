@@ -1,18 +1,29 @@
-use marion::browser::Browser;
+use marion::browser::{Browser, Capabilities, CapabilityRequest};
 use tokio;
-use webdriverbidi::{Capabilities, CapabilityRequest};
+
+// --------------------------------------------------
+
+async fn sleep(secs: u64) {
+    tokio::time::sleep(tokio::time::Duration::from_secs(secs)).await
+}
+
+// --------------------------------------------------
 
 #[tokio::main]
 async fn main() {
+    // Define the expected WebDriver capabilities
     let always_match = CapabilityRequest::new();
     let capabilities = Capabilities::new(always_match);
 
+    // Initialize a new browser
     let mut browser = Browser::new(capabilities, "localhost", 4444);
+    // Open the browser
+    browser.open().await.unwrap();
 
-    browser.start().await.unwrap();
+    // Go to rust-lang.org
+    browser.goto("https://www.rust-lang.org/").await.expect("");
+    sleep(3).await;
 
-    // sleep for 5 seconds
-    tokio::time::sleep(tokio::time::Duration::from_secs(3)).await;
-
-    browser.stop().await.unwrap();
+    // Clone the browser
+    browser.close().await.unwrap();
 }

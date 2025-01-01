@@ -23,10 +23,3 @@ pub enum BrowserError {
     #[error("Unknown error: {0}")]
     UnknownError(String),
 }
-
-// Example usage in other modules
-impl From<std::io::Error> for BrowserError {
-    fn from(error: std::io::Error) -> Self {
-        BrowserError::UnknownError(error.to_string())
-    }
-}

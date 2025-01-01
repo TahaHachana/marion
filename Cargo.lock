@@ -1575,11 +1575,12 @@ dependencies = [
 
 [[package]]
 name = "webdriverbidi"
-version = "0.1.5"
+version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "57db7fe5c80bc28ff92c4f11c308a71f117484b28058e2094689e4b8b282fca2"
+checksum = "0eee98ae31cdc8e034248ca85297bdea3ebdb4b485addda4aeea10ab55ee532d"
 dependencies = [
  "futures",
+ "log",
  "reqwest",
  "serde",
  "serde_json",
